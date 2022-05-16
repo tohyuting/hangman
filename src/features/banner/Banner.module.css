@@ -1,0 +1,40 @@
+.banner {
+    display: flex;
+    position:fixed;
+    top:0;
+    background-color: #8FC9FF;
+    width:100%;
+    z-index:100;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.logo {
+    height: 5vmin;
+    pointer-events: none;
+    background-color: aliceblue;
+    border-radius: 30%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 5%;
+}
+
+.logoTitle {
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.username {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    margin-left: 5%;
+}
