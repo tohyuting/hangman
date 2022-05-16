@@ -10,7 +10,11 @@ export function Display() {
             <img src={ hangman } className={styles.hangmanState}/>
             <p className={styles.p}>Guesses Left: 6</p>
         </div>
-        <h1>Theme: Movie</h1>
+        <div className={ styles.textStatus }>
+          <h2 className={styles.h2}>Theme: Movie</h2>
+          <p className={styles.wordLines}>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</p>
+        </div>
+
     </div>
   );
 }

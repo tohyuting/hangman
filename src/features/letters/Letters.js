@@ -1,19 +1,13 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
-  decrement,
-  increment,
   incrementByAmount,
-  incrementAsync,
-  incrementIfOdd,
-  selectCount,
 } from './../counter/counterSlice';
 import styles from './Letters.module.css';
 
 export function Letters() {
-  const count = useSelector(selectCount);
   const dispatch = useDispatch();
-  const [incrementAmount, setIncrementAmount] = useState('2');
+  const [incrementAmount] = useState('2');
 
   const incrementValue = Number(incrementAmount) || 0;
 

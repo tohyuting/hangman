@@ -2,7 +2,6 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  flex-wrap: wrap;
   width: 100vh;
 }
 
@@ -15,12 +14,26 @@
   margin: 5%
 }
 
-.h1 {
+.h2 {
   margin: 0;
   padding: 0;
   word-wrap: break-word;
+  text-align: center;
 }
 
 .p {
   font-weight: bold;
+}
+
+.textStatus {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.wordLines {
+  font-weight: 400px;
+  margin-top: 25vh;
+  word-break: break-all;
 }
