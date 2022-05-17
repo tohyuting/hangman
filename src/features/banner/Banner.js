@@ -9,7 +9,7 @@ export function Banner() {
                 <img src={ hangman } className={styles.logo} />
                 <p className={styles.title}> Hangman</p>    
         </div>
-        <p className={styles.username}>Username</p>
+        <p className={styles.username}>{sessionStorage.getItem('Username')}</p>
       </div>
   );
 }
