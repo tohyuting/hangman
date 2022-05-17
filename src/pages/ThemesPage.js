@@ -6,16 +6,21 @@ import sports from '../assets/sports.json';
 
 function ThemesPage() {
     const [wordToGuess, setWordToGuess] = React.useState('');
+    const [theme, setTheme] = React.useState('');
+
+    function setWordAndTheme(theme, array) {
+        setTheme(theme);
+        setWordToGuess(
+            array[Math.floor(Math.random() * array.length)].word
+        );
+    }
 
     return (
         <div className="container">
             <p>Choose a theme</p>
-            <Button onClick={() => setWordToGuess(
-                movies[Math.floor(Math.random() * movies.length)].word
-            )}>Movies</Button>
-            <Button onClick={() => setWordToGuess(
-                sports[Math.floor(Math.random() * sports.length)].word
-            )}>Sports</Button>
+            <Button onClick={() => setWordAndTheme('Movies', movies)}>Movies</Button>
+            <Button onClick={() => setWordAndTheme('Sports', sports)}>Sports</Button>
+            {theme}<br/>
             {wordToGuess}
         </div>
     )
