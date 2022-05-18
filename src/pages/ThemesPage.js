@@ -7,6 +7,7 @@ import countries from '../assets/countries.json';
 import animals from '../assets/animals.json';
 import foods from '../assets/foods.json';
 
+import styles from './ThemesPage.module.css';
 
 function ThemesPage() {
     
@@ -22,17 +23,14 @@ function ThemesPage() {
     }
 
     return (
-        <div>
-            <p>Choose a theme</p>
-
-            <Button onClick={() => setWordAndTheme('Movies', movies) }>Movies</Button>
-            <Button onClick={() => setWordAndTheme('Sports', sports)}>Sports</Button>
-            <Button onClick={() => setWordAndTheme('Food', foods)}>Food</Button>
-            <Button onClick={() => setWordAndTheme('Animals', animals)}>Animals</Button>
-            <Button onClick={() => setWordAndTheme('Countries', countries)}>Countries</Button>
-
-            {theme}<br/>
-            {wordToGuess}
+        <div className={styles.container}>
+                <button onClick={() => setWordAndTheme('Movies', movies) } className={styles.btn}>MOVIES</button>
+                <button onClick={() => setWordAndTheme('Sports', sports) } className={styles.btn}>SPORTS</button>
+                <button onClick={() => setWordAndTheme('Food', foods) } className={styles.btn}>FOODS</button>
+                <button onClick={() => setWordAndTheme('Animals', animals) } className={styles.btn}>ANIMALS</button>
+                <button onClick={() => setWordAndTheme('Countries', countries) } className={styles.btn}>COUNTRIES</button>
+            {/* {theme}<br/>
+            {wordToGuess}    */}
         </div>
     )
 }
