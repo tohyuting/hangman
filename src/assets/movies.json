@@ -1,10 +1,63 @@
 [
     {
         "theme": "Movies",
-        "word": "Howl's Moving Castle"
+        "word": "Howl Moving Castle"
     },
     {
         "theme": "Movies",
         "word": "Spirited Away"
+    },
+    {
+        "theme": "Movies",
+        "word": "Titanic"
+    },
+    {
+        "theme": "Movies",
+        "word": "Die Hard"
+    },
+    {
+        "theme": "Movies",
+        "word": "John Wick"
+    },
+    {
+        "theme": "Movies",
+        "word": "Home Alone"
+    },
+    {
+        "theme": "Movies",
+        "word": "James Bond"
+    },
+    {
+        "theme": "Movies",
+        "word": "Fast and Furious"
+    },
+    {
+        "theme": "Movies",
+        "word": "Iron man"
+    },
+    {
+        "theme": "Movies",
+        "word": "Batman"
+    },
+    {
+        "theme": "Movies",
+        "word": "Black Panther"
+    },
+    {
+        "theme": "Movies",
+        "word": "Infinity War"
+    },
+    {
+        "theme": "Movies",
+        "word": "Pocahontas"
+    },
+    {
+        "theme": "Movies",
+        "word": "Mulan"
+    },
+    {
+        "theme": "Movies",
+        "word": "Cinderella"
     }
+    
 ]
