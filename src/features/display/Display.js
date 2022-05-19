@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Display.module.css';
 import hangman from './hangman.png';
+import { Hint } from '../hint/Hint';
 
 export function Display() {
 
@@ -12,6 +13,7 @@ export function Display() {
         </div>
         <div className={ styles.textStatus }>
           <h2 className={styles.h2}>Theme: Movie</h2>
+          <Hint />
           <p className={styles.wordLines}>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</p>
         </div>
 
