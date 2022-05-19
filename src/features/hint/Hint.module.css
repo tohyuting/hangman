@@ -1,0 +1,29 @@
+.button {
+  appearance: none;
+  background: none;
+  font-size: 15px;
+  outline: none;
+  border: 2px solid transparent;
+  color: #000000;
+  padding-bottom: 10px;
+  cursor: pointer;
+  background-color: #f796f4;
+  border-radius: 10px;
+  transition: all 0.15s;
+  margin: 0;
+  table-layout: fixed;
+  width: 100%;
+  min-height: 60px;
+  min-width: 0;
+}
+
+.button-27:hover {
+  box-shadow: rgba(255, 143, 221, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-27:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
