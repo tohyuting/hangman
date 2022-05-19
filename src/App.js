@@ -5,10 +5,12 @@ import StartPage from "./pages/StartPage";
 import ThemesPage from "./pages/ThemesPage";
 import MainPage from "./pages/MainPage";
 import ErrorPage from "./pages/ErrorPage";
+import { Banner } from './features/banner/Banner';
 
 function App() {
   return (
       <Router>
+        <Banner />
         {/* Remove navbar before submission */}
         <nav>
           <Link to="/">Start</Link>
