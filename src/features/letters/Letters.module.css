@@ -41,6 +41,24 @@
   width: 7vh;
 }
 
+.button1 {
+  appearance: none;
+  background: none;
+  font-size: 32px;
+  outline: none;
+  border: 2px solid transparent;
+  color: #FFFFFF;
+  padding-bottom: 4px;
+  cursor: pointer;
+  background-color: #7D99FE;
+  border-radius: 10px;
+  transition: all 0.15s;
+  margin: 0.5%;
+  table-layout: fixed;
+  width: 7vh;
+  opacity: 0.4;
+}
+
 
 .textbox {
   font-size: 32px;
