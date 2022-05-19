@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import { Letters } from './features/letters/Letters';
 import { Display } from './features/display/Display';
 import { Banner } from './features/banner/Banner';
+import { Hint } from './features/hint/Hint';
 import './Hangman.css';
 
 function Hangman() {
@@ -12,6 +13,7 @@ function Hangman() {
         <Banner />
         <Display />
         <Letters />
+        <Hint />
       </header>
     </div>
   );
