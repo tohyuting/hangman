@@ -1,0 +1,39 @@
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100vh;
+}
+
+.hangmanState {
+  height: 30vmin;
+  margin: 5%;
+}
+
+.leftStatus {
+  margin: 5%
+}
+
+.h2 {
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+.p {
+  font-weight: bold;
+}
+
+.textStatus {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.wordLines {
+  font-weight: 400px;
+  margin-top: 25vh;
+  word-break: break-all;
+}
