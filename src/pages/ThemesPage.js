@@ -21,8 +21,6 @@ export function GetWord() {
 
 
 function ThemesPage() {
-
-
     const [wordToGuess, setWordToGuess] = React.useState('');
     const [theme, setTheme] = React.useState('');
 

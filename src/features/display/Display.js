@@ -116,12 +116,12 @@ export function Display() {
               <p className={styles.p}>Guesses Left: { guessCountsLeft } </p>
           </div>
           <div className={ styles.textStatus }>
-            <h2 className={styles.h2}>Theme: Movies </h2>
-            <Hint />
+            <h2 className={ styles.h2 }>Theme: Movies </h2>
             <p className={styles.wordLines}> {guessWord.split("").map(letter=> (
               lettersMap.get(letter)[0] ? (letter + " ") : "_ "
             ))}
             </p>
+            <Hint />
           </div>
       </div>
 

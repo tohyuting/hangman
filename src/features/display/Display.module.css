@@ -82,3 +82,16 @@
   width: 7vh;
   opacity: 0.4;
 }
+
+.button:hover,
+.button:focus {
+  border: 2px solid rgba(112, 76, 182, 0.4);
+}
+
+.button:active {
+  background-color: rgba(112, 76, 182, 0.2);
+}
+
+.wordLines {
+  font-weight: bold;
+}
