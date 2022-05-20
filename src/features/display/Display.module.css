@@ -5,6 +5,16 @@
   width: 100vh;
 }
 
+.letterRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-left: 18%;
+  padding-right: 18%;
+  text-align: center;
+}
+
 .hangmanState {
   height: 30vmin;
   margin: 5%;
@@ -36,4 +46,39 @@
   font-weight: 400px;
   margin-top: 25vh;
   word-break: break-all;
+}
+
+.button {
+  appearance: none;
+  background: none;
+  font-size: 32px;
+  outline: none;
+  border: 2px solid transparent;
+  color: #FFFFFF;
+  padding-bottom: 4px;
+  cursor: pointer;
+  background-color: #7D99FE;
+  border-radius: 10px;
+  transition: all 0.15s;
+  margin: 0.5%;
+  table-layout: fixed;
+  width: 7vh;
+}
+
+.button1 {
+  appearance: none;
+  background: none;
+  font-size: 32px;
+  outline: none;
+  border: 2px solid transparent;
+  color: #FFFFFF;
+  padding-bottom: 4px;
+  cursor: pointer;
+  background-color: #7D99FE;
+  border-radius: 10px;
+  transition: all 0.15s;
+  margin: 0.5%;
+  table-layout: fixed;
+  width: 7vh;
+  opacity: 0.4;
 }

@@ -7,6 +7,18 @@ import animals from '../assets/animals.json';
 import foods from '../assets/foods.json';
 import styles from './ThemesPage.module.css';
 
+var chosenTheme = "";
+var chosenWord = "";
+
+export function GetTheme() {
+    console.log(chosenTheme);
+    return chosenTheme;
+}
+
+export function GetWord() {
+    return chosenWord;
+}
+
 
 function ThemesPage() {
 
@@ -15,10 +27,11 @@ function ThemesPage() {
     const [theme, setTheme] = React.useState('');
 
     function setWordAndTheme(theme, array) {
+        var chooseWord = array[Math.floor(Math.random() * array.length)].word;
+        chosenTheme = theme;
+        chosenWord = chooseWord;
         setTheme(theme);
-        setWordToGuess(
-            array[Math.floor(Math.random() * array.length)].word
-        );
+        setWordToGuess(chooseWord);
     }
 
     function handleClick(themes) {
