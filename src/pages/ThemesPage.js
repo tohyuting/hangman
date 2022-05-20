@@ -1,4 +1,5 @@
 import React from "react";
+import { useStore } from "react-redux";
 import './ThemesPage.css';
 import movies from '../assets/movies.json';
 import sports from '../assets/sports.json';
@@ -6,30 +7,26 @@ import countries from '../assets/countries.json';
 import animals from '../assets/animals.json';
 import foods from '../assets/foods.json';
 import styles from './ThemesPage.module.css';
-
-var chosenTheme = "";
-var chosenWord = "";
-
-export function GetTheme() {
-    console.log(chosenTheme);
-    return chosenTheme;
-}
-
-export function GetWord() {
-    return chosenWord;
-}
-
+import { store } from '../app/hangmanStore.js'
 
 function ThemesPage() {
     const [wordToGuess, setWordToGuess] = React.useState('');
     const [theme, setTheme] = React.useState('');
+    const store = useStore();
 
     function setWordAndTheme(theme, array) {
         var chooseWord = array[Math.floor(Math.random() * array.length)].word;
-        chosenTheme = theme;
-        chosenWord = chooseWord;
         setTheme(theme);
         setWordToGuess(chooseWord);
+        store.dispatch({
+            type: 'theme/newTheme',
+            text: theme,
+        });
+
+        store.dispatch({
+            type: 'word/newWord',
+            text: chooseWord,
+        });
     }
 
     function handleClick(themes) {

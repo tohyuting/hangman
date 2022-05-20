@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useStore } from 'react-redux';
 import styles from './Display.module.css';
 import hangman0 from './hangman0.png';
 import hangman1 from './hangman1.png';
@@ -108,6 +109,8 @@ export function Display() {
     );
   }
 
+  const store = useStore();
+
   return (
     <div>
       <div className={styles.row}>
@@ -116,7 +119,7 @@ export function Display() {
               <p className={styles.p}>Guesses Left: { guessCountsLeft } </p>
           </div>
           <div className={ styles.textStatus }>
-            <h2 className={ styles.h2 }>Theme: Movies </h2>
+            <h2 className={ styles.h2 }>Theme: {useStore().getState().theme} </h2>
             <p className={styles.wordLines}> {guessWord.split("").map(letter=> (
               lettersMap.get(letter)[0] ? (letter + " ") : "_ "
             ))}
