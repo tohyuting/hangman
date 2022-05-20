@@ -50,10 +50,6 @@ function getHangmanState() {
 }
 
 function processClick(letter, setModalFunc) {
-  if (lettersMap.get(letter)[0]) {
-    return;
-  }
-
   if (guessCountsLeft == 0) {
     // render losing screen
     endGameStatus = "YOU LOSE!!"
@@ -65,6 +61,10 @@ function processClick(letter, setModalFunc) {
     // show the winning screen
     endGameStatus = "YOU WIN!!"
     setModalFunc(true);
+    return;
+  }
+
+  if (lettersMap.get(letter)[0]) {
     return;
   }
 
