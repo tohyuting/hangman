@@ -1,6 +1,8 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
+
+
 function EndGameModal(props) {
     return (
       <Modal
@@ -11,12 +13,12 @@ function EndGameModal(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Well done! / Try again!
+            { props.header }
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Answer was...</h4>
-          <p>sth</p>
+          <h4>{ props.content }</h4>
+          <p>{ props.answer }</p>
         </Modal.Body>
         <Modal.Footer>
           <Button href="/">Back to Home</Button>

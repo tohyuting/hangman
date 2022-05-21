@@ -8,6 +8,7 @@ import ErrorPage from "./pages/ErrorPage";
 import { Banner } from './features/banner/Banner';
 
 function App() {
+
   return (
       <Router>
         <Banner />

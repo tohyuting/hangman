@@ -1,13 +1,15 @@
 const initialState = {
-  value: "",
-  status: 'idle',
+  theme: "",
+  word: "",
 };
 
 function letterReducer (state = initialState, action) {
   switch (action.type) {
-    case 'letter/newPress': 
-      return {state, status: 'pressed'};
+    case 'add': 
+      return { ...state, theme: action.theme, word: action.word};
     default:
       return state;
   }
 }
+
+export default letterReducer;
