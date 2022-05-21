@@ -5,11 +5,8 @@ const initialState = {
 
 function letterReducer (state = initialState, action) {
   switch (action.type) {
-    case 'theme/newTheme': 
-      console.log(action.text);
-      return { ...state, theme: action.text};
-    case 'word/newWord':
-      return { ...state, word: action.text};
+    case 'add': 
+      return { ...state, theme: action.theme, word: action.word};
     default:
       return state;
   }

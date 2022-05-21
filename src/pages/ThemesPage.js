@@ -1,5 +1,6 @@
 import React from "react";
-import { useStore } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useNavigate } from 'react-router-dom';
 import './ThemesPage.css';
 import movies from '../assets/movies.json';
 import sports from '../assets/sports.json';
@@ -7,25 +8,21 @@ import countries from '../assets/countries.json';
 import animals from '../assets/animals.json';
 import foods from '../assets/foods.json';
 import styles from './ThemesPage.module.css';
-import { store } from '../app/hangmanStore.js'
 
 function ThemesPage() {
     const [wordToGuess, setWordToGuess] = React.useState('');
     const [theme, setTheme] = React.useState('');
-    const store = useStore();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     function setWordAndTheme(theme, array) {
         var chooseWord = array[Math.floor(Math.random() * array.length)].word;
         setTheme(theme);
         setWordToGuess(chooseWord);
-        store.dispatch({
-            type: 'theme/newTheme',
-            text: theme,
-        });
-
-        store.dispatch({
-            type: 'word/newWord',
-            text: chooseWord,
+        dispatch({
+            type: 'add',
+            theme: theme,
+            word: chooseWord,
         });
     }
 
@@ -43,7 +40,7 @@ function ThemesPage() {
         } else {
             window.location.replace("ErrorPage");
         }
-        window.location.replace("hangman");
+        navigate("/hangman");
     }
 
     return (

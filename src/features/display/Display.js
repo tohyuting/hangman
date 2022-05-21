@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useStore } from 'react-redux';
+import { useSelector } from 'react-redux';
 import styles from './Display.module.css';
 import hangman0 from './hangman0.png';
 import hangman1 from './hangman1.png';
@@ -12,15 +12,15 @@ import hangmanstart from './hangmanstart.png';
 import hangmanend from './hangmanend.png';
 import { Hint } from '../hint/Hint';
 import EndGameModal from '../EndGameModal';
-import { GetTheme, GetWord } from '../../pages/ThemesPage.js';
 
-const guessWord = "SPIDERMAN"
+var guessWord = "SPIDERMAN"
 
 var endGameStatus = "";
 var endGameContent = "The correct answer is: ";
 var lettersMap = new Map();
-var numberLettersLeft = new Set(guessWord).size;
+var numberLettersLeft = "";
 var guessCountsLeft = 8;
+var firstTime = true;
 
 const setupLetters = () => {
   "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(letter => {
@@ -30,35 +30,42 @@ const setupLetters = () => {
 };
 
 function getHangmanState() {
-  if (guessCountsLeft == 8) {
+  if (guessCountsLeft === 8) {
     return hangmanstart;
-  } else if (guessCountsLeft == 7) {
+  } else if (guessCountsLeft === 7) {
     return hangman0;
-  } else if (guessCountsLeft == 6) {
+  } else if (guessCountsLeft === 6) {
     return hangman1;
-  } else if (guessCountsLeft == 5) {
+  } else if (guessCountsLeft === 5) {
     return hangman2;
-  } else if (guessCountsLeft == 4) {
+  } else if (guessCountsLeft === 4) {
     return hangman3;
-  } else if (guessCountsLeft == 3) {
+  } else if (guessCountsLeft === 3) {
     return hangman4;
-  } else if (guessCountsLeft == 2) {
+  } else if (guessCountsLeft === 2) {
     return hangman5;
-  } else if (guessCountsLeft == 1) {
+  } else if (guessCountsLeft === 1) {
     return hangman6;
   } 
   return hangmanend;
 }
 
 function processClick(letter, setModalFunc) {
-  if (guessCountsLeft == 0) {
+  if (firstTime) {
+    guessCountsLeft = 8;
+    var removeSpacesAndDashes = guessWord.replace(' ', '');
+    removeSpacesAndDashes = removeSpacesAndDashes.replace('-', '');
+    numberLettersLeft = new Set(removeSpacesAndDashes).size;
+    firstTime = false;
+  }
+  if (guessCountsLeft === 0) {
     // render losing screen
     endGameStatus = "YOU LOSE!!"
     setModalFunc(true);
     return;
   }
 
-  if (numberLettersLeft == 0) {
+  if (numberLettersLeft === 0) {
     // show the winning screen
     endGameStatus = "YOU WIN!!"
     setModalFunc(true);
@@ -76,7 +83,7 @@ function processClick(letter, setModalFunc) {
       guessCountsLeft--;
     }
 
-    if (guessCountsLeft == 0) {
+    if (guessCountsLeft === 0) {
       // render losing screen
       endGameStatus = "YOU LOSE!!"
       setModalFunc(true);
@@ -84,7 +91,7 @@ function processClick(letter, setModalFunc) {
     }
   } else {
     numberLettersLeft--;
-    if (numberLettersLeft == 0) {
+    if (numberLettersLeft === 0) {
       // show the winning screen
       endGameStatus = "YOU WIN!!"
       setModalFunc(true);
@@ -93,6 +100,24 @@ function processClick(letter, setModalFunc) {
   // set clicked to be true
   lettersMap.get(letter)[1](true);
   
+}
+
+function checkLetters(letter) {
+  if (letter === " ") {
+    return false;
+  } else if (letter === "-") {
+    return false;
+  }
+  return lettersMap.get(letter)[0];
+}
+
+function checkSpaces(letter) {
+  if (letter === " ") {
+    return letter;
+  } else if (letter === "-") {
+    return letter;
+  }
+  return "_ ";
 }
 
 export function Display() {
@@ -108,8 +133,9 @@ export function Display() {
       </button>)
     );
   }
-
-  const store = useStore();
+  const getTheme = useSelector(state => state.letter.theme);
+  const getGuessWord = useSelector(state => state.letter.word).toUpperCase();
+  guessWord = getGuessWord;
 
   return (
     <div>
@@ -119,9 +145,9 @@ export function Display() {
               <p className={styles.p}>Guesses Left: { guessCountsLeft } </p>
           </div>
           <div className={ styles.textStatus }>
-            <h2 className={ styles.h2 }>Theme: {useStore().getState().theme} </h2>
+            <h2 className={ styles.h2 }>Theme: {getTheme} </h2>
             <p className={styles.wordLines}> {guessWord.split("").map(letter=> (
-              lettersMap.get(letter)[0] ? (letter + " ") : "_ "
+              checkLetters(letter) ? (letter + " ") : checkSpaces(letter).replaceAll(' ', '\u00a0')
             ))}
             </p>
             <Hint />
