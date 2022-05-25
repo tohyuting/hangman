@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Banner.module.css';
-import hangman from './hangman.png';
+import hangman from '../../assets/hangman.png';
 
 export function Banner() {
   return (

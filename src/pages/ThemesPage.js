@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
-import './ThemesPage.css';
 import movies from '../assets/movies.json';
 import sports from '../assets/sports.json';
 import countries from '../assets/countries.json';

@@ -15,6 +15,7 @@ function Username({ type = "text", label }) {
     const uname = document.getElementById("username").value;
     if (uname.length > 15) {
       setIsValid(false);
+      setName("");
       return;
     } else if (uname === "") {
       sessionStorage.setItem("Username", "Guest");
@@ -31,7 +32,7 @@ function Username({ type = "text", label }) {
         <input id="username" type={type} value={name} onChange={handleChange} />
         <label className={name && "filled"}>{label}</label>
         {isValid ? "" : <p id="invalidName">15 characters max!</p>}
-        <Button type="submit">Start</Button>
+        <Button variant="secondary" type="submit">Start</Button>
       </form>
     </div>
   );
