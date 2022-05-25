@@ -9,6 +9,8 @@ import animals from '../assets/animals.json';
 import foods from '../assets/foods.json';
 import styles from './ThemesPage.module.css';
 
+import Media from 'react-media';
+
 function ThemesPage() {
     const [wordToGuess, setWordToGuess] = React.useState('');
     const [theme, setTheme] = React.useState('');
