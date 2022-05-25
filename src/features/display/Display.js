@@ -165,7 +165,7 @@ export function Display() {
           <div className={ styles.textStatus }>
             <h2 className={ styles.h2 }>Theme: {getTheme} </h2>
             <button className={styles.hintButton} onClick = {() => alert(giveHint(letterShown))}> 
-            Get Hint
+            Get Hint <blink><i class="fa fa-lightbulb-o"></i></blink>
             </button>
           </div>
 
