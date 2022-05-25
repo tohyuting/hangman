@@ -12,7 +12,7 @@ form {
 
 .input-container:focus-within label {
   transform: translate(0, 20px) scale(0.8);
-  color: #0a53e4;
+  color: #71c8ff;
 }
 
 .input-container .filled {
@@ -28,13 +28,14 @@ form {
   color: #6f81a5;
   font-size: 16px;
   line-height: 1;
-  left: 16px;
+  left: 15px;
+  padding: 0 15px;
 }
 
 .input-container input {
   height: 64px;
   border-radius: 4px;
-  border: 1px solid #79b1ff;
+  border: none;
   border-radius: 12px;
   padding: 24px 16px 4px 16px;
   margin: 10px;
@@ -46,12 +47,12 @@ form {
 }
 
 .input-container input:focus {
-  box-shadow: 0 0 0 2px #79b1ff;
+  box-shadow: 0 0 0 2px #71c8ff;
 }
 
 #invalidName {
   position: absolute;
   transform: translate(230px, 28px) scale(1);
   font-size: 16px;
-  color: red;
+  color: indianred;
 }
