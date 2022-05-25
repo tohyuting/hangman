@@ -6,9 +6,39 @@ import sports from '../assets/sports.json';
 import countries from '../assets/countries.json';
 import animals from '../assets/animals.json';
 import foods from '../assets/foods.json';
-import styles from './ThemesPage.module.css';
+// import styles from './ThemesPage.module.css';
 
 function ThemesPage() {
+
+    const styles = {
+        container: {
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            textAlign: "center",
+            backgroundColor: "a4e4da",
+            color: "white",
+            fontWeight: "bold",
+            fontSize: "30px",
+            height: "100vh",
+            backgroundColor: "#a4e4da"
+        },
+        btn: {
+            backgroundColor: "white",
+            border: "none",
+            height: "120px",
+            width: "120px",
+            borderRadius: "50%",
+            color: "#71c8ff",
+            textAlign: "center",
+            textDecoration: "none",
+            display: "inline-block",
+            fontSize: "16px",
+            fontWeight: "bold",
+            margin: "4px 2px"
+        }
+    };
     const [wordToGuess, setWordToGuess] = React.useState('');
     const [theme, setTheme] = React.useState('');
     const dispatch = useDispatch();
@@ -44,14 +74,13 @@ function ThemesPage() {
 
     return (
 
-        <div className={styles.container}>
-            <button onClick={() => handleClick(1)} className={styles.btn}>MOVIES</button>
-            <button onClick={() => handleClick(2)} className={styles.btn}>SPORTS</button>
-            <button onClick={() => handleClick(3)} className={styles.btn}>FOODS</button>
-            <button onClick={() => handleClick(4)} className={styles.btn}>ANIMALS</button>
-            <button onClick={() => handleClick(5)} className={styles.btn}>COUNTRIES</button>
-            {/* {theme}<br/>
-            {wordToGuess}    */}
+        <div style={styles.container}>
+            <p>Choose a Theme</p>
+            <button onClick={() => handleClick(1)} style={styles.btn}>MOVIES</button>
+            <button onClick={() => handleClick(2)} style={styles.btn}>SPORTS</button>
+            <button onClick={() => handleClick(3)} style={styles.btn}>FOODS</button>
+            <button onClick={() => handleClick(4)} style={styles.btn}>ANIMALS</button>
+            <button onClick={() => handleClick(5)} style={styles.btn}>COUNTRIES</button>
         </div>
 
 

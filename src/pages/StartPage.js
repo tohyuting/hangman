@@ -10,7 +10,6 @@ function StartPage() {
             justifyContent: "center",
             alignItems: "center",
             textAlign: "center",
-            backgroundColor: "a4e4da",
             color: "white",
             fontWeight: "bold",
             fontSize: "30px",
