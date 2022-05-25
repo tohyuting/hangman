@@ -10,9 +10,10 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding-left: 18vw;
-  padding-right: 18vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
   text-align: center;
+
 }
 
 .hangmanState {
@@ -51,7 +52,7 @@
 .button {
   appearance: none;
   background: none;
-  font-size: 32px;
+  font-size: 5vh;
   outline: none;
   border: 2px solid transparent;
   color: #FFFFFF;
@@ -60,7 +61,7 @@
   background-color: #7D99FE;
   border-radius: 10px;
   transition: all 0.15s;
-  margin: 0.5%;
+  margin: 0.5vh;
   table-layout: fixed;
   width: 7vh;
 }
@@ -85,7 +86,7 @@
 .buttonPressed {
   appearance: none;
   background: none;
-  font-size: 32px;
+  font-size: 5vh;
   outline: none;
   border: 2px solid transparent;
   color: #FFFFFF;
@@ -94,7 +95,7 @@
   background-color: #7D99FE;
   border-radius: 10px;
   transition: all 0.15s;
-  margin: 0.5%;
+  margin: 0.5vh;
   table-layout: fixed;
   width: 7vh;
   opacity: 0.4;
