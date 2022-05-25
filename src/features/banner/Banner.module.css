@@ -23,6 +23,9 @@
     display: flex;
     margin-left: 5%;
     margin-right: 5%;
+    text-decoration: none;
+    justify-content: center;
+    color: #3392ce;
 }
 
 .username {

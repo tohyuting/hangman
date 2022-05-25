@@ -3,12 +3,13 @@ import './MainPage.css';
 import EndGameModal from '../features/EndGameModal';
 import { Button } from 'react-bootstrap';
 import { Display } from '../features/display/Display';
-
+import Banner from '../features/banner/Banner';
 
 function MainPage() {
   const [modalShow, setModalShow] = React.useState(false);
   return (
     <div className="container">
+      <Banner />
       <Display />
       <Button variant="primary" onClick={() => setModalShow(true)}>
         End Game

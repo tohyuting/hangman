@@ -2,13 +2,13 @@ import React from 'react';
 import styles from './Banner.module.css';
 import hangman from '../../assets/hangman.png';
 
-export function Banner() {
+export default function Banner() {
   return (
       <div className={styles.banner}> 
-        <div className={styles.logoTitle}>
-                <img src={ hangman } className={styles.logo} />
-                <p className={styles.title}> Hangman</p>    
-        </div>
+        <a href="/" className={styles.logoTitle}>
+            <img src={ hangman } className={styles.logo} />
+            <p className={styles.title}>Hangman</p> 
+        </a>
         <p className={styles.username}>{sessionStorage.getItem('Username')}</p>
       </div>
   );
