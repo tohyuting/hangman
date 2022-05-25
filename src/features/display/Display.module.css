@@ -2,7 +2,7 @@
   display: flex;
   align-items: flex-start;
   width: 95vw;
-  
+  justify-content: center;
 }
 
 .letterRow {
@@ -17,9 +17,9 @@
 }
 
 .hangmanState {
-  height: 30vmin;
+  height: 30vh;
   block-size: auto;
-  max-inline-size: 30%;
+  max-inline-size: 60%;
   margin: 5%;
 }
 
