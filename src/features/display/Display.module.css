@@ -52,7 +52,7 @@
 .button {
   appearance: none;
   background: none;
-  font-size: 5vh;
+  font-size: 4vh;
   outline: none;
   border: 2px solid transparent;
   color: #FFFFFF;
@@ -86,7 +86,7 @@
 .buttonPressed {
   appearance: none;
   background: none;
-  font-size: 5vh;
+  font-size: 4vh;
   outline: none;
   border: 2px solid transparent;
   color: #FFFFFF;
