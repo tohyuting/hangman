@@ -143,7 +143,7 @@ export function Display() {
   const generateLetters = () => {
     return "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(letter => 
       (<button
-        className={ lettersMap.get(letter)[0] ? styles.button1 : styles.button }
+        className={ lettersMap.get(letter)[0] ? styles.buttonPressed : styles.button }
         onClick={() => processClick(letter, setModalShow)}
       >
         {letter}
@@ -158,25 +158,28 @@ export function Display() {
   return (
     <div>
       <div className={styles.row}>
-          <div className={ styles.leftStatus }>
+          <div className={ styles.textStatus }>
               <img src={ getHangmanState() } className={styles.hangmanState}/>
               <p className={styles.p}>Guesses Left: { guessCountsLeft } </p>
           </div>
           <div className={ styles.textStatus }>
             <h2 className={ styles.h2 }>Theme: {getTheme} </h2>
+            <button className={styles.hintButton} onClick = {() => alert(giveHint(letterShown))}> 
+            Get Hint
+            </button>
+          </div>
+
+      </div>
+      <div className={styles.textStatus}>
             <p className={styles.wordLines}> {guessWord.split("").map(letter=> (
               checkLetters(letter) ? (letter + " ") : checkSpaces(letter).replaceAll(' ', '\u00a0')
             ))}
             </p>
-            <button onClick = {() => alert(giveHint(letterShown))}> 
-            Get Hint
-            </button>
-          </div>
       </div>
       <div>
-      <div className={styles.letterRow}>
-        {generateLetters()}
-      </div>
+        <div className={styles.letterRow}>
+          {generateLetters()}
+        </div>
       </div>
       <EndGameModal
         show={modalShow}
