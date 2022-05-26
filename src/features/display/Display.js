@@ -157,7 +157,38 @@ export function Display() {
 
   return (
     <div>
-      <div className={styles.row}>
+      <div class="row row-cols-1 row-cols-lg-2">
+        <div class="col">
+          <img src={ getHangmanState() } className={styles.responsive}/>
+          <p className={styles.p}>Guesses Left: { guessCountsLeft } </p>
+        </div>
+        <div class="col">
+          <div className={styles.center}>
+          <div className={styles.side}>
+          <span className={ styles.h2 }>Theme: {getTheme} </span>
+          <button type="button" className={styles.hintButton} onClick = {() => alert(giveHint(letterShown))}> 
+            <i class="fa fa-lightbulb-o"></i><br/>Hint
+          </button>
+          </div>
+          <p className={styles.wordLines}> {guessWord.split("").map(letter=> (
+              checkLetters(letter) ? (letter + " ") : checkSpaces(letter).replaceAll(' ', '\u00a0')
+            ))}
+          </p>
+          </div>
+        </div>
+      </div>
+      <div className={styles.letterRow}>
+        {generateLetters()}
+      </div>
+      <br/>
+      <EndGameModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        header={ endGameStatus }
+        content={ endGameContent }
+        answer={ guessWord }
+      />
+      {/* <div className={styles.row}>
           <div className={ styles.textStatus }>
               <img src={ getHangmanState() } className={styles.hangmanState}/>
               <p className={styles.p}>Guesses Left: { guessCountsLeft } </p>
@@ -185,7 +216,7 @@ export function Display() {
         header={ endGameStatus }
         content={ endGameContent }
         answer={ guessWord }
-      />
+      /> */}
     </div>
   );
 }
