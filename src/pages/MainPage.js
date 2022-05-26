@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import './MainPage.css';
 import EndGameModal from '../features/EndGameModal';
 import { Button } from 'react-bootstrap';
@@ -8,7 +8,7 @@ import Banner from '../features/banner/Banner';
 function MainPage() {
   const [modalShow, setModalShow] = React.useState(false);
   return (
-    <div className="container">
+    <div>
       <Banner />
       <div className="mainPage">
       <Display />

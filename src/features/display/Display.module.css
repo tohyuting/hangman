@@ -1,8 +1,17 @@
-.row {
+.side {
   display: flex;
-  align-items: flex-start;
-  width: 100vw;
-  
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 .letterRow {
@@ -10,31 +19,34 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding-left: 5vw;
-  padding-right: 5vw;
   text-align: center;
-
+  max-width: 700px;
+  margin: auto;
 }
 
-.hangmanState {
-  height: 30vmin;
-  block-size: auto;
-  max-inline-size: 30%;
-  margin: 5%;
+.responsive {
+  max-width: 55%;
+  height: auto;
+  /* height: 30vh; */
+  /* block-size: auto; */
+  /* max-inline-size: 50%; */
+  /* margin-top: 6vh; */
 }
 
 .leftStatus {
-  margin: 5%
+  margin: 5%;
 }
 
 .h2 {
   word-wrap: break-word;
   text-align: center;
+  font-size: calc(20px + 1vh);
 }
 
 .p {
   font-weight: bold;
   text-align: center;
+  font-size: calc(10px + 1vh);
 }
 
 .textStatus {
@@ -52,53 +64,61 @@
 .button {
   appearance: none;
   background: none;
-  font-size: 5vh;
+  font-size: calc(10px + 1vh);
   outline: none;
   border: 2px solid transparent;
   color: #FFFFFF;
-  padding-bottom: 4px;
   cursor: pointer;
-  background-color: #7D99FE;
+  background-color: #6f81a5;
   border-radius: 10px;
   transition: all 0.15s;
   margin: 0.5vh;
   table-layout: fixed;
-  width: 7vh;
+  width: 6vh;
+  height: 6vh;
+  font-weight: bold;
 }
 
 .hintButton {
   appearance: none;
   background: none;
-  font-size: 20wh;
+  font-size: 15px;
   outline: none;
   border: 2px solid transparent;
   color: #FFFFFF;
   padding-bottom: 4px;
   cursor: pointer;
   background-color: #fe7da4;
-  border-radius: 10px;
+  border-radius: 50%;
   transition: all 0.15s;
   margin: 0.5%;
   table-layout: fixed;
-  width: 20vw;
+  width: 60px;
+  height: 60px;
+}
+
+.hintButton:hover {
+  transform: scale(1.1);
+  background: #ff9cba;
 }
 
 .buttonPressed {
   appearance: none;
   background: none;
-  font-size: 5vh;
+  font-size: calc(10px + 1vh);
+  font-weight: bold;
   outline: none;
   border: 2px solid transparent;
   color: #FFFFFF;
-  padding-bottom: 4px;
   cursor: pointer;
-  background-color: #7D99FE;
+  background-color: #6f81a5;
   border-radius: 10px;
   transition: all 0.15s;
   margin: 0.5vh;
   table-layout: fixed;
-  width: 7vh;
-  opacity: 0.4;
+  width: 6vh;
+  height: 6vh;
+  opacity: 0.6;
 }
 
 .button:hover,
