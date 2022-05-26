@@ -10,6 +10,7 @@ function MainPage() {
   return (
     <div className="container">
       <Banner />
+      <div className="mainPage">
       <Display />
       <Button variant="primary" onClick={() => setModalShow(true)}>
         End Game
@@ -21,6 +22,7 @@ function MainPage() {
         content="Don't give up yet!"
         answer="Try Harder!!"
       />
+      </div>
     </div>
   )
 }
