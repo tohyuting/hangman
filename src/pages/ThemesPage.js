@@ -49,11 +49,23 @@ function ThemesPage() {
 
         <div className={styles.themePage}>
             <p>Choose a Theme</p>
+            <div class="row row-cols-1 row-cols-lg-5">
+            <div class="col">
             <button onClick={() => handleClick(1)} className={styles.themeBtn}>MOVIES</button>
+            </div>
+            <div class="col">
             <button onClick={() => handleClick(2)} className={styles.themeBtn}>SPORTS</button>
+            </div>
+            <div class="col">
             <button onClick={() => handleClick(3)} className={styles.themeBtn}>FOODS</button>
+            </div>
+            <div class="col">
             <button onClick={() => handleClick(4)} className={styles.themeBtn}>ANIMALS</button>
+            </div>
+            <div class="col">
             <button onClick={() => handleClick(5)} className={styles.themeBtn}>COUNTRIES</button>
+            </div>
+            </div>
         </div>
 
 
