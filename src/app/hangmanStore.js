@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import letterReducer from '../features/display/ThemeWordSlice';
+import stateReducer from '../features/display/ThemeWordSlice';
 
 export const store = configureStore({
   reducer: {
-    letter: letterReducer
+    hangmanState: stateReducer
   },
 });

@@ -3,7 +3,7 @@ const initialState = {
   word: "",
 };
 
-function letterReducer (state = initialState, action) {
+function stateReducer (state = initialState, action) {
   switch (action.type) {
     case 'add': 
       return { ...state, theme: action.theme, word: action.word};
@@ -12,4 +12,4 @@ function letterReducer (state = initialState, action) {
   }
 }
 
-export default letterReducer;
+export default stateReducer;

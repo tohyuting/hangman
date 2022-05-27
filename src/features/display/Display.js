@@ -150,8 +150,8 @@ export function Display() {
       </button>)
     );
   }
-  const getTheme = useSelector(state => state.letter.theme);
-  const getGuessWord = useSelector(state => state.letter.word).toUpperCase();
+  const getTheme = useSelector(state => state.hangmanState.theme);
+  const getGuessWord = useSelector(state => state.hangmanState.word).toUpperCase();
 
   guessWord = getGuessWord;
 
