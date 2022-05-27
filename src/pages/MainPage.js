@@ -1,18 +1,18 @@
 import React from "react";
-import './MainPage.css';
-import EndGameModal from '../features/EndGameModal';
+import EndGameModal from '../features/modal/EndGameModal';
 import { Button } from 'react-bootstrap';
 import { Display } from '../features/display/Display';
 import Banner from '../features/banner/Banner';
+import styles from './MainPage.module.css';
 
 function MainPage() {
   const [modalShow, setModalShow] = React.useState(false);
   return (
     <div>
       <Banner />
-      <div className="mainPage">
+      <div className={styles.mainPage}>
       <Display />
-      <Button variant="primary" onClick={() => setModalShow(true)}>
+      <Button className={styles.endGameBtn} onClick={() => setModalShow(true)}>
         End Game
       </Button>
       <EndGameModal

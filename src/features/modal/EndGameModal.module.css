@@ -1,0 +1,31 @@
+.modal {
+    background-color: aliceblue;
+}
+
+.homeBtn {
+    background-color: #6f81a5 !important;
+    border: none !important;
+}
+
+.homeBtn:hover {
+    background-color: #566e9d !important;
+}
+.newGameBtn {
+    background-color: #71c8ff !important;
+    border: none !important;
+}
+
+.newGameBtn:hover {
+    background-color: #3eb5ff !important; 
+}
+
+.content {
+    text-align: center;
+}
+
+.answer {
+    font-size: calc(20px + 1vh);
+    text-align: center;
+    font-weight: bold;
+    color:cadetblue;
+}
