@@ -10,7 +10,7 @@ import hangman5 from './hangman5.png';
 import hangman6 from './hangman6.png';
 import hangmanstart from './hangmanstart.png';
 import hangmanend from './hangmanend.png';
-import EndGameModal from '../EndGameModal';
+import EndGameModal from '../modal/EndGameModal';
 
 
 var guessWord = "SPIDERMAN";
