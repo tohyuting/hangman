@@ -1,7 +1,5 @@
 <div id="top"></div>
 
-[![Contributors][contributors-shield]][contributors-url]
-
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://hangman-22.netlify.app/hangman)
