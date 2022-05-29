@@ -60,6 +60,10 @@ To understand more about this project, please refer to the [Documentation](https
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Demo
+
+https://user-images.githubusercontent.com/46236142/170861458-457eb348-492b-40dd-8a1a-cd5e0923221c.mp4
+
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
 [contributors-url]: https://github.com/tiktok-camp-group-22/hangman/graphs/contributors
 [product-screenshot]: public/screenshot.png
