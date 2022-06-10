@@ -97,7 +97,7 @@ function processClick(letter, setModalFunc) {
   } else {
     numberLettersLeft--;
     letterShown = letterShown + letter;
-        if (numberLettersLeft === 0) {
+    if (numberLettersLeft === 0) {
       // show the winning screen
       endGameStatus = "YOU WIN!!"
       setModalFunc(true);
@@ -125,20 +125,29 @@ function checkSpaces(letter) {
   return "_ ";
 }
 
-function giveHint(letterShown) {
+function giveHint(setHintButton, setModalFunc) {
   if (chance) {
     chance = false;
     var removeSpacesAndDashes = guessWord.replace(' ', '');
     removeSpacesAndDashes = removeSpacesAndDashes.replace('-', '');
     removeSpacesAndDashes = [...new Set(removeSpacesAndDashes.split(''))].join('');
     var hintsLetterLeft = removeSpacesAndDashes.replace(letterShown,'');
-    return hintsLetterLeft[Math.floor(Math.random() * hintsLetterLeft.length)]
+    var toReturn = hintsLetterLeft[Math.floor(Math.random() * hintsLetterLeft.length)];
+    // set the letter button to be disabled
+    lettersMap.get(toReturn)[1](true);
+    setHintButton(true);
+    numberLettersLeft--;
+    if (numberLettersLeft == 0) {
+      // show the winning screen
+      endGameStatus = "YOU WIN!!"
+      setModalFunc(true);
+    }
   }
-  return 'No More Chances. Good Luck!';
 }
 
 export function Display() {
   const [modalShow, setModalShow] = useState(false);
+  const [hintButtonPressed, setHintButton] = useState(false);
   setupLetters();
   const generateLetters = () => {
     return "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(letter => 
@@ -166,7 +175,7 @@ export function Display() {
           <div className={styles.center}>
           <div className={styles.side}>
           <span className={ styles.h2 }>Theme: {getTheme} </span>
-          <button type="button" className={styles.hintButton} onClick = {() => alert(giveHint(letterShown))}> 
+          <button type="button" className={hintButtonPressed ? styles.hintButtonPressed : styles.hintButton} onClick = {() => giveHint(setHintButton, setModalShow)}> 
             <i class="fa fa-lightbulb-o"></i><br/>Hint
           </button>
           </div>

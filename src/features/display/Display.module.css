@@ -97,6 +97,25 @@
   height: 60px;
 }
 
+.hintButtonPressed {
+  appearance: none;
+  background: none;
+  font-size: 15px;
+  outline: none;
+  border: 2px solid transparent;
+  color: #FFFFFF;
+  padding-bottom: 4px;
+  cursor: pointer;
+  background-color: #fe7da4;
+  border-radius: 50%;
+  transition: all 0.15s;
+  margin: 0.5%;
+  table-layout: fixed;
+  width: 60px;
+  height: 60px;
+  opacity: 0.6;
+}
+
 .hintButton:hover {
   transform: scale(1.1);
   background: #ff9cba;
