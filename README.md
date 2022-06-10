@@ -4,7 +4,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://hangman-22.netlify.app/hangman)
 
-This is a hangman web app created by Group 22 as part of TikTok Camp 2022. The deployed web link is [https://hangman-22.netlify.app/](https://hangman-22.netlify.app/).
+This is a hangman web app created by Group 22 as part of TikTok Camp 2022. The deployed web link is [here](https://hangman-tiktok22.netlify.app).
 
 ### Built With
 
